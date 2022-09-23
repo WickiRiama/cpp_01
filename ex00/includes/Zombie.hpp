@@ -1,19 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 13:27:38 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/23 14:21:18 by mriant           ###   ########.fr       */
+/*   Created: 2022/09/23 12:10:50 by mriant            #+#    #+#             */
+/*   Updated: 2022/09/23 13:58:06 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie	*newZombie(std::string name)
+# include <string>
+
+class Zombie
 {
-	Zombie	*newZ = new Zombie(name);
-	return (newZ);
-}
+private:
+
+	Zombie(void);
+
+	std::string	_name;
+
+public:
+
+	Zombie(std::string name);
+	~Zombie(void);
+
+	void	annonce(void);
+};
+
+#endif
