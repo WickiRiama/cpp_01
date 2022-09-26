@@ -6,12 +6,26 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 09:42:21 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/26 18:12:25 by mriant           ###   ########.fr       */
+/*   Updated: 2022/09/26 18:24:00 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
+
+void	closeFiles(std::ifstream *ifs, std::ofstream *ofs)
+{
+	if (ifs)
+	{
+		(*ifs).close();
+		delete ifs;
+	}
+	if (ofs)
+	{
+		(*ofs).close();
+		delete ofs;
+	}
+}
 
 std::ifstream	*openInfile(char *name)
 {
@@ -20,7 +34,7 @@ std::ifstream	*openInfile(char *name)
 	if (!(*ifs).good())
 	{
 		std::cerr << "Error: " << name << " can't be opened." << std::endl;
-		delete ifs;
+		closeFiles(ifs, 0);
 		return (0);
 	}
 	if ((*ifs).peek() == EOF)
@@ -39,7 +53,7 @@ std::ofstream	*openOutfile(char *name)
 	if (!(*ofs).good())
 	{
 		std::cerr << "Error: " << outfile_name << " not created." << std::endl;
-		delete ofs;
+		closeFiles(0, ofs);
 		return (0);
 	}
 	return (ofs);
@@ -90,8 +104,6 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	replaceString(ifs, ofs, av[2], av[3]);
-	(*ifs).close();
-	(*ofs).close();
-	delete ifs;
-	delete ofs;
+	closeFiles(ifs, ofs);
+	return (0);
 }
