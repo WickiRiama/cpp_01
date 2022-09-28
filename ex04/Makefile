@@ -6,7 +6,7 @@
 #    By: mriant <mriant@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/26 09:37:27 by mriant            #+#    #+#              #
-#    Updated: 2022/09/26 09:37:56 by mriant           ###   ########.fr        #
+#    Updated: 2022/09/28 15:05:29 by mriant           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,16 @@ SRCS = ${addprefix srcs/, \
 
 OBJS = ${SRCS:srcs/%.cpp=build/%.o}
 DEPS = ${SRCS:srcs/%.cpp=build/%.d}
+
+TEST_FILES = ${addprefix test/test_files/, ${addsuffix .replace, \
+	directory \
+	empty_file \
+	file1 \
+	file2 \
+	file3 \
+	forbidden_file}}
+TEST_FILES += ${addprefix test/test_files/, \
+	forbidden_file}
 
 CC = c++
 CFLAGS = -Wextra -Wall -Werror -g -std=c++98
@@ -36,6 +46,7 @@ all: ${NAME}
 .PHONY: clean
 clean:
 	rm -rf build
+	rm -rf ${TEST_FILES}
 
 .PHONY: fclean
 fclean: clean
