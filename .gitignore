@@ -1,6 +1,7 @@
 *.o
 *.d
 *.aout
+build/
 .vscode
 braiiiiiiinnnzzzZ
 moar_brainz
