@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   Harl.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/28 16:50:06 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/30 11:43:42 by mriant           ###   ########.fr       */
+/*   Created: 2022/09/30 11:41:12 by mriant            #+#    #+#             */
+/*   Updated: 2022/09/30 11:42:12 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#ifndef HARL_H
+# define HARL_H
 
-# include <string>
+# include "Harl.hpp"
 
-class Harl
-{
-private:
-
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-
-public:
-
-	Harl(void);
-	~Harl(void);
-
-	void	complain(std::string level);
-};
+typedef void (Harl::*HarlMemberFunc)(void);
 
 #endif
