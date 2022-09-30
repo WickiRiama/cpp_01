@@ -6,9 +6,13 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 16:14:16 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/23 16:50:41 by mriant           ###   ########.fr       */
+/*   Updated: 2022/09/30 11:44:42 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+
 
 #include <string>
 
@@ -30,3 +34,5 @@ public:
 	Weapon	getWeapon(void);
 	void	attack(void);
 };
+
+#endif
