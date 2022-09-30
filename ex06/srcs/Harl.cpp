@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:50:48 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/30 15:45:12 by mriant           ###   ########.fr       */
+/*   Updated: 2022/09/30 16:18:19 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void	Harl::filter(std::string level)
 			this->_complain("WARNING");
 		case 3:
 			this->_complain("ERROR");
+			break;
 		default:
 			this->_complain("");
 	}
