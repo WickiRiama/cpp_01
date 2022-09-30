@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 13:27:00 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/30 13:50:02 by mriant           ###   ########.fr       */
+/*   Updated: 2022/09/30 15:19:23 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,26 +15,16 @@
 
 #include "Harl.hpp"
 
-int	main (void)
+int	main (int ac, char **av)
 {
+	if (ac != 2)
+	{
+		std::cout << "Usage: ./harlFilter \"level\"" << std::endl;
+		return (1);
+	}
+	
 	Harl	harl;
+	harl.filter(av[1]);
 
-	std::cout << std::endl << "=== DEBUG ===" << std::endl;
-	harl.filter("DEBUG");
-	
-	std::cout << std::endl << "=== INFO ===" << std::endl;
-	harl.filter("INFO");
-	
-	std::cout << std::endl << "=== WARINING ===" << std::endl;
-	harl.filter("WARNING");
-	
-	std::cout << std::endl << "=== ERROR ===" << std::endl;
-	harl.filter("ERROR");
-	
-	std::cout << std::endl << "=== WRONG LEVEL ===" << std::endl;
-	harl.filter("other");
-	
-	std::cout << std::endl << "=== EMPTY LEVEL ===" << std::endl;
-	harl.filter("");
 	return (0);
 }

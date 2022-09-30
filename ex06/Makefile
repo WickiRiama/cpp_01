@@ -6,7 +6,7 @@
 #    By: mriant <mriant@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 12:55:26 by mriant            #+#    #+#              #
-#    Updated: 2022/09/30 12:57:28 by mriant           ###   ########.fr        #
+#    Updated: 2022/09/30 15:23:43 by mriant           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,5 +45,10 @@ fclean: clean
 .PHONY: re
 re: fclean
 	make -C .
+
+.PHONY: test
+test: ${NAME}
+	./test/test.sh
+
 
 -include ${DEPS}
