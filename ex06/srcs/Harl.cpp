@@ -6,7 +6,7 @@
 /*   By: mriant <mriant@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:50:48 by mriant            #+#    #+#             */
-/*   Updated: 2022/09/30 16:18:19 by mriant           ###   ########.fr       */
+/*   Updated: 2022/10/21 17:25:35 by mriant           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,10 +79,13 @@ void	Harl::filter(std::string level)
 	{
 		case 0:
 			this->_complain("DEBUG");
+			__attribute__ ((fallthrough));
 		case 1:
 			this->_complain("INFO");
+			__attribute__ ((fallthrough));
 		case 2:
 			this->_complain("WARNING");
+			__attribute__ ((fallthrough));
 		case 3:
 			this->_complain("ERROR");
 			break;

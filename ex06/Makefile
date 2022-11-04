@@ -6,7 +6,7 @@
 #    By: mriant <mriant@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/30 12:55:26 by mriant            #+#    #+#              #
-#    Updated: 2022/09/30 15:23:43 by mriant           ###   ########.fr        #
+#    Updated: 2022/10/21 17:25:11 by mriant           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = ${addprefix srcs/, \
 OBJS = ${SRCS:srcs/%.cpp=build/%.o}
 DEPS = ${SRCS:srcs/%.cpp=build/%.d}
 
-CC = c++
+CC = clang++
 CFLAGS = -Wextra -Wall -Werror -g -std=c++98
 IFLAGS = -MMD -I./includes
 LFLAGS = 
